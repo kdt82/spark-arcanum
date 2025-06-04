@@ -1,0 +1,92 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Build outputs
+dist/
+build/
+.vite/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+
+# Uploads directory (user-generated content)
+uploads/
+uploads/*
+
+# Data files (large datasets - preserve structure but ignore large files)
+data/AllPrintings.json
+data/AtomicCards.json
+
+# Backup files and archives
+backups/
+*.bak
+*.tar.gz
+*.zip
+
+# Deployment and build scripts
+deploy-to-github.js
+github-*.sh
+push-to-*.sh
+
+# Response and temporary files
+response.json
+response.txt
+generated-icon.png
+
+# Documentation that gets consolidated into README
+CHANGELOG-*.md
+DEPLOYMENT.md
+PUSH_INSTRUCTIONS.md
+
+# Large attached assets (keep only logos and essential files)
+attached_assets/image_174*.png
+attached_assets/screencapture-*.png
+
+# Storage backup files
+server/storage*.bak
+server/storage-new.ts
