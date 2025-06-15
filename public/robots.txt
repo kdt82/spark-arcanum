@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://spark-arcanum.replit.app/sitemap.xml
+
+# Allow indexing of main pages
+Allow: /
+Allow: /public-decks
+Allow: /deck-view/*
+
+# Disallow user-specific and private pages
+Disallow: /admin
+Disallow: /my-decks
+Disallow: /deck-builder
+Disallow: /reset-password
+
+# Disallow API endpoints
+Disallow: /api/
+
+# Allow search engines to access static assets
+Allow: /images/
+Allow: /fonts/
+Allow: *.css
+Allow: *.js
+
+# Crawl delay (optional - be respectful)
+Crawl-delay: 1

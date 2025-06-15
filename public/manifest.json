@@ -1,0 +1,24 @@
+{
+  "name": "Spark Arcanum - MTG Rules Engine",
+  "short_name": "Spark Arcanum",
+  "description": "Professional Magic: The Gathering rules engine with AI-powered card rulings and deck builder",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1e293b",
+  "theme_color": "#1e293b",
+  "icons": [
+    {
+      "src": "/images/spark-arcanum-logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/images/spark-arcanum-logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ],
+  "categories": ["games", "utilities", "productivity"],
+  "lang": "en",
+  "orientation": "portrait"
+}

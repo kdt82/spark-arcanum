@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .container {
+    @apply mx-auto px-4;
+    max-width: 1280px; /* Default max width */
+  }
+  
+  /* Add responsive max-width constraints */
+  @media (min-width: 1536px) {
+    .container {
+      max-width: 1280px; /* Limit width on extra large screens */
+    }
+  }
+}
+
+/* Set Roboto as the default font for all text */
+@layer base {
+  html {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .font-heading, .heading-font {
+    font-family: 'Bokor', cursive;
+  }
+}
+
+:root {
+  /* Theme with blue-purple colors matching logo gradient */
+  --background: 210 25% 95%; /* Light gray background */
+  --foreground: 220 20% 25%; /* Darker text for better contrast */
+  --muted: 210 20% 92%; /* Muted gray elements */
+  --muted-foreground: 220 10% 45%; /* Muted text */
+  --popover: 0 0% 100%; /* Pure white for popovers */
+  --popover-foreground: 220 14.3% 20%; /* Dark text for popovers */
+  --card: 0 0% 100%; /* White for cards */
+  --card-foreground: 220 14.3% 20%; /* Dark text for cards */
+  --border: 220 20% 88%; /* Light border */
+  --input: 220 20% 88%; /* Input borders */
+  --primary: 235 85% 55%; /* Primary blue-purple color from logo */
+  --primary-foreground: 210 40% 98%; /* Primary text color */
+  --secondary: 267 80% 60%; /* Secondary purple color from logo */
+  --secondary-foreground: 220 20% 20%; /* Darker text for secondary */
+  --accent: 255 70% 60%; /* Accent blue-purple color from logo */
+  --accent-foreground: 220 20% 20%; /* Darker text for accent */
+  --destructive: 0 84.2% 60.2%; /* Destructive color */
+  --destructive-foreground: 210 40% 98%; /* Destructive text */
+  --ring: 215 25% 65%; /* Ring color */
+  --radius: 0.5rem;
+  
+  /* Explicit light theme colors */
+  --light-background: #eef2f6;
+  --light-card: #ffffff;
+  --light-text: #334155;
+  --light-text-secondary: #64748b;
+  --light-border: #e2e8f0;
+  
+  /* New theme colors matching logo */
+  --logo-blue: #4777e6;
+  --logo-purple: #9c4dff;
+  --logo-gradient-start: #4777e6;
+  --logo-gradient-end: #9c4dff;
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 207 90% 54%;
+  --primary-foreground: 211 100% 99%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    background-color: var(--light-background, #eef2f6) !important;
+    color: var(--light-text, #334155) !important;
+  }
+  
+  html.dark body {
+    background-color: #121212 !important;
+    color: #E0E0E0 !important;
+  }
+  
+  /* Define panel and card colors for light theme */
+  .bg-white, .card, .panel, [class*='bg-white'], [class*='bg-card'] {
+    background-color: var(--light-card, #ffffff) !important;
+    border-color: var(--light-border, #e2e8f0) !important;
+  }
+  
+  header, footer {
+    background-color: var(--light-card, #ffffff) !important;
+    border-color: var(--light-border, #e2e8f0) !important;
+  }
+  
+  /* Dark theme overrides */
+  html.dark .bg-white, 
+  html.dark .card, 
+  html.dark .panel,
+  html.dark [class*='bg-white'],
+  html.dark [class*='bg-card'] {
+    background-color: #1E1E1E !important;
+    border-color: #333333 !important;
+  }
+  
+  html.dark header,
+  html.dark footer {
+    background-color: #1E1E1E !important;
+    border-color: #333333 !important;
+  }
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 dark:bg-gray-600 rounded;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500 dark:bg-gray-500;
+}
+
+/* Light theme specific styles */
+.light-theme-styles {
+  /* These styles will be applied forcefully to ensure light theme is visible */
+  --main-bg: #eef2f6;
+  --card-bg: #ffffff;
+  --secondary-bg: #f8fafc;
+  --border-color: #e2e8f0;
+  --header-footer-bg: #ffffff;
+  --text-primary: #334155;
+  --text-secondary: #64748b;
+}
+
+/* FORCE LIGHT THEME STYLES */
+html:not(.dark) body,
+html.light-theme-styles body {
+  background-color: #eef2f6 !important;
+  color: #334155 !important;
+}
+
+html:not(.dark) .flex.flex-col.min-h-screen,
+html.light-theme-styles .flex.flex-col.min-h-screen {
+  background-color: #eef2f6 !important;
+}
+
+html:not(.dark) .bg-white, 
+html:not(.dark) .rounded-lg,
+html:not(.dark) .card,
+html:not(.dark) [class*='bg-white'],
+html:not(.dark) [class*='bg-card'],
+html:not(.dark) [class*='bg-background'],
+html:not(.dark) .panel,
+html.light-theme-styles .bg-white, 
+html.light-theme-styles .rounded-lg,
+html.light-theme-styles .card,
+html.light-theme-styles [class*='bg-white'],
+html.light-theme-styles [class*='bg-card'],
+html.light-theme-styles [class*='bg-background'],
+html.light-theme-styles .panel {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) header,
+html:not(.dark) footer,
+html.light-theme-styles header,
+html.light-theme-styles footer {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
